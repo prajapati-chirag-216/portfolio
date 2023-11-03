@@ -1,0 +1,32 @@
+.hero-image {
+  width: 25rem;
+  animation: pop-out-profile-img 0.8s forwards $default-easing-function;
+}
+
+.profile-description {
+  background-color: #f6f2f2;
+  width: 70%;
+  padding: 3rem 4rem;
+  font-size: 2rem;
+  align-self: flex-end;
+  letter-spacing: $small-letter-spacing;
+  line-height: 3rem;
+  margin-right: -25rem;
+  border-radius: 5px;
+  margin-bottom: 0;
+  z-index: 10;
+  color: black;
+  box-shadow: 0 0.5rem 2rem rgba(65, 65, 65, 0.2);
+  animation: pop-out-profile-text 0.8s forwards $default-easing-function;
+  @include respond(tab-land) {
+    padding: 2rem 3rem;
+  }
+  @include respond(tab-land) {
+    padding: 1.5rem 2.5rem;
+  }
+  @include respond(phone) {
+    width: 100%;
+    letter-spacing: 0.5px;
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,77 @@
+.about-content {
+  &--secondary {
+    font-size: $default-font-size;
+    letter-spacing: $small-letter-spacing;
+    line-height: $medium-line-hight;
+    &::first-letter {
+      font-size: $large-font-size;
+    }
+    hyphens: auto;
+  }
+  & + hr {
+    border: 1px solid rgba($color-primary-x-light, 0.5);
+  }
+  width: 100%;
+}
+
+.personal-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  font-size: $default-font-size;
+  min-width: 55rem;
+  @include respond(phone) {
+    min-width: 100%;
+  }
+  @media only screen and (max-width: 62.5em) {
+    flex-direction: column;
+    min-width: 42rem;
+  }
+}
+.detail {
+  width: 43%;
+  display: flex;
+  background-image: url("../img/right-arrow.svg");
+  background-size: $medium-font-size;
+  background-position: center left -0.5rem;
+  background-repeat: no-repeat;
+  letter-spacing: $small-letter-spacing;
+  display: flex;
+  align-items: center;
+  @media only screen and (max-width: 62.5em) {
+    width: 100%;
+  }
+  @include respond(phone) {
+    width: 100%;
+  }
+  & > span {
+    margin-left: 2.2rem;
+    font-weight: $medium-font-weight;
+    margin-right: 1rem;
+    border-bottom: $hr-primary;
+  }
+  &:nth-child(6) {
+    flex-grow: 1;
+    & > p {
+      word-break: break-all;
+    }
+  }
+  margin-bottom: 2rem;
+}
+.hobies {
+  margin-top: 2.5rem;
+  hyphens: auto;
+  & > h2 {
+    line-height: $small-line-hight;
+    letter-spacing: $small-letter-spacing;
+  }
+  & > p::first-letter {
+    font-size: $medium-font-size;
+  }
+  & > p {
+    letter-spacing: $small-letter-spacing;
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+}

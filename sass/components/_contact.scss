@@ -1,0 +1,35 @@
+.contact-details {
+  flex: 1;
+  & + hr {
+    border: 1px solid rgba($color-primary-x-light, 0.5);
+  }
+}
+
+.contact-info {
+  background-color: $color-primary-x-light;
+  display: flex;
+  gap: 2rem;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &--icon {
+    width: 3rem;
+  }
+  &--details {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: $small-letter-spacing;
+    & > h2 {
+      font-size: 1.8rem;
+    }
+    & > p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.contact-form {
+  flex: 2;
+}

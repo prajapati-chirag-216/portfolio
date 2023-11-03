@@ -1,0 +1,81 @@
+.footer-plate {
+  background-color: $color-primary-x-light;
+  letter-spacing: $default-letter-spacing;
+  position: absolute;
+  top: -4rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 8rem;
+  padding: 1.5rem 4rem;
+  width: max-content;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(#363636, 0.1);
+  &-text {
+    font-size: $large-font-size;
+    font-weight: 400;
+    color: $color-white;
+    &--1 {
+      transform: translateY(10rem);
+    }
+    &--2 {
+      transform: translateY(5rem);
+    }
+  }
+}
+.footer-section {
+  width: 40rem;
+  height: 10rem;
+  position: absolute;
+  padding: 2rem;
+  padding-top: 3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-top: 2px solid $color-white;
+  .media-icons {
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    & > a {
+      display: block;
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      display: flex;
+      cursor: pointer;
+      transition: all 0.1s;
+      & > img {
+        width: 3.3rem;
+      }
+      &:hover {
+        background-color: rgba($color-primary-x-light, 0.8);
+        box-shadow: 0 3px 8px rgba(#363636, 0.15);
+      }
+    }
+  }
+}
+.download-btn--footer,
+.download-btn--footer:link,
+.download-btn--footer:visited {
+  background-color: $color-primary-x-light;
+  border-radius: 3px;
+  padding: 1rem 2rem;
+  letter-spacing: $small-letter-spacing;
+  position: absolute;
+  right: 3rem;
+  bottom: 3rem;
+  box-shadow: 0 3px 8px rgba(#363636, 0.1);
+  @media only screen and (min-width: 37.5em) {
+    &:hover > img {
+      animation: shake-top-down 0.5s ease-in-out infinite;
+    }
+  }
+}

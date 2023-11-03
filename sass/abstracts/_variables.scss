@@ -1,0 +1,107 @@
+// COLORS
+$color-primary: #4fab8e;
+$color-primary-light: #68a18f;
+$color-primary-x-light: #76b29f;
+$color-primary-dark: #1c6f55;
+$color-primary-x-dark: #1b5845;
+
+$color-bg-primary: rgb(227, 222, 217);
+$color-bg-secondary: rgba($color-primary-x-light, 0.3);
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #feee;
+
+$color-grey-dark-1: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+//GRADIENT
+$gradient-primary: linear-gradient(
+  to bottom right,
+  $color-primary-light,
+  $color-primary-dark
+);
+$gradient-secondary: linear-gradient(
+  to bottom right,
+  $color-primary-x-light,
+  $color-primary-dark
+);
+$gradient-tertiary: linear-gradient(
+  to right bottom,
+  $color-primary-x-light,
+  $color-primary-light,
+  $color-primary
+);
+$gradient-shine: linear-gradient(
+  0deg,
+  transparent 0%,
+  #ffffff97 50%,
+  transparent
+);
+
+// EASING-FUNCTION
+$default-easing-function: cubic-bezier(0.58, -0.01, 0.35, 1.33);
+
+// TRANSITION
+$primary-transition: all 0.3s $default-easing-function;
+
+//SHADOW
+$box-shadow-primary: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+$box-shadow-secondary: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+
+// FONT
+$default-font-size: 1.6rem;
+$small-font-size: 1rem;
+$medium-font-size: 2.2rem;
+$large-font-size: 3rem;
+$x-large-font-size: 5rem;
+
+// GRID
+$grid-gap-small: 1.2rem;
+$grid-gap-medium: 1.6rem;
+$grid-gap-large: 3rem;
+$grid-gap: $grid-gap-medium;
+
+//FON-WIGHT
+$default-font-weight: 400;
+$low-font-weight: 300;
+$medium-font-weight: 500;
+$hight-font-weight: 700;
+
+//GAP
+$default-gap: 2rem;
+$gap-small: 1.5rem;
+$gap-medium: 3rem;
+$gap-large: 4rem;
+
+// NAVIGATION
+$nav-width: 10rem;
+$nav-height: 10rem;
+$nav-transition-delay: 0.9s;
+
+//MENU
+$menu-font-size: 2.2rem;
+
+//ABOUT
+$color-about-primary: rgba(196, 200, 204, 0.729);
+
+//HR
+$hr-primary: 1px solid currentcolor;
+$hr-medium: 2px solid currentcolor;
+$color-hr-primary: $color-primary-light;
+$color-hr-secondary: rgba(154, 171, 187, 0.236);
+
+//LINE-HIGHT
+$default-line-hight: 2rem;
+$small-line-hight: 1rem;
+$medium-line-hight: 3rem;
+$large-line-hight: 4rem;
+
+//LETTER-SPACING
+$default-letter-spacing: 2px;
+$small-letter-spacing: 1px;
+$medium-letter-spacing: 4px;
+$large-letter-spacing: 5px;

@@ -1,0 +1,137 @@
+.main-navigation {
+  position: fixed;
+  width: $nav-width;
+  height: $nav-height;
+  top: 3rem;
+  right: 3rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: $primary-transition;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: $box-shadow-secondary;
+  overflow: hidden;
+  z-index: 1000;
+
+  &:not(:hover) {
+    transition-delay: $nav-transition-delay;
+  }
+
+  &:hover {
+    height: 50rem;
+    & > .nav-icon {
+      content: url("../img/menu.svg");
+    }
+    & > .menu-box > .menu-item {
+      &--1 {
+        bottom: 20rem;
+        transition-delay: 0.7s;
+      }
+
+      &--2 {
+        bottom: 14rem;
+        transition-delay: 0.5s;
+      }
+
+      &--3 {
+        bottom: 8rem;
+        transition-delay: 0.3s;
+      }
+
+      &--4 {
+        bottom: 2rem;
+        transition-delay: 0.1s;
+      }
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    background-color: transparent;
+    backdrop-filter: blur(5px) brightness(95%);
+    z-index: -10;
+  }
+}
+
+.nav-icon {
+  width: 4rem;
+}
+
+.menu-box {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $gap-medium;
+  font-size: $medium-font-size;
+  text-transform: capitalize;
+  width: 10rem;
+  height: 82%;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-item {
+  gap: $gap-small;
+  padding: 0.5rem;
+  padding-bottom: 0;
+  position: absolute;
+  transition: $primary-transition;
+  bottom: 45rem;
+  &--1 {
+    transition-delay: 0s;
+  }
+
+  &--2 {
+    transition-delay: 0.2s;
+  }
+
+  &--3 {
+    transition-delay: 0.4s;
+  }
+
+  &--4 {
+    transition-delay: 0.6s;
+  }
+}
+
+.menu-icon {
+  width: $large-font-size;
+}
+
+.menu-item:hover .menu-icon {
+  transform: scale(1.1);
+  transition: $primary-transition;
+}
+
+.menu-item:nth-child(1):hover .menu-icon {
+  content: url("../img/home.svg");
+}
+
+.menu-item:nth-child(2):hover .menu-icon {
+  content: url("../img/person.svg");
+}
+
+.menu-item:nth-child(3):hover .menu-icon {
+  content: url("../img/doc.svg");
+}
+
+.menu-item:nth-child(4):hover .menu-icon {
+  content: url("../img/contact.svg");
+}

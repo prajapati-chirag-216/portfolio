@@ -1,0 +1,14 @@
+.main-header {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: $color-bg-primary;
+  // @include respond(tab-land) {
+  //   height: 110vh;
+  // }
+  // @include respond(tab-port) {
+  //   height: 115vh;
+  // }
+  // padding: 2rem;
+}

@@ -1,0 +1,95 @@
+.education-container {
+  display: flex;
+  justify-content: space-between;
+}
+.education-content {
+  display: flex;
+  width: 100%;
+  gap: 2.5rem;
+  &:last-child {
+    .entry-point {
+      background-color: #529782;
+    }
+  }
+  overflow: hidden;
+  padding-left: 1rem;
+  margin-left: -1rem;
+  &:first-child > .education-entry > .education-details--3 {
+    @media only screen and (min-width: 43.75em) {
+      display: none;
+    }
+  }
+  &:nth-of-type(2) {
+    @media only screen and (max-width: 43.75em) {
+      display: none;
+    }
+    .education-divider.show-animate {
+      animation: grow-1 0.8s backwards ease-in-out 0.8s;
+    }
+  }
+}
+.education-divider {
+  border: $hr-primary;
+  opacity: 0;
+  &.show-animate {
+    opacity: 1;
+    animation: grow-1 0.8s ease-in-out;
+  }
+}
+.education-details {
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+  position: relative;
+  opacity: 0;
+  &--1.show-animate {
+    opacity: 1;
+    animation: grow-1 0.8s ease-in-out;
+  }
+  &--2.show-animate {
+    opacity: 1;
+    animation: grow-2 0.9s backwards ease-in-out 0.3s;
+  }
+  &--3.show-animate {
+    opacity: 1;
+    @media only screen and (min-width: 43.75em) {
+      animation: grow-1 0.8s backwards ease-in-out 0.8s;
+    }
+    @media only screen and (max-width: 43.75em) {
+      animation: grow-2 0.8s backwards ease-in-out 0.6s;
+    }
+  }
+}
+.entry-point {
+  width: 2rem;
+  height: 2rem;
+  top: 0;
+  left: -3.5rem;
+  border: 2px solid $color-white;
+  border-radius: 50%;
+  position: absolute;
+  background-color: $color-primary-light;
+}
+.education-degree {
+  font-size: 2.3rem;
+  letter-spacing: $small-letter-spacing;
+  line-height: $default-line-hight;
+  margin-bottom: 2.5rem;
+}
+.education-year {
+  font-size: $default-font-size;
+  letter-spacing: $small-letter-spacing;
+  background-color: $color-primary-x-light;
+  border-radius: 3px;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.7rem;
+}
+.education-institute {
+  font-size: 1.7rem;
+  letter-spacing: $small-letter-spacing;
+}
+.education-score {
+  font-size: 1.1rem;
+  letter-spacing: $small-letter-spacing;
+}

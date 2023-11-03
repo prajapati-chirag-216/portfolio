@@ -1,0 +1,179 @@
+.project-grid {
+  display: grid;
+  margin: auto;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 0.6fr));
+  justify-content: center;
+  gap: 5rem;
+  @media only screen and (max-width: 27em) {
+    grid-template-columns: repeat(auto-fit, minmax(110%, 0.6fr));
+  }
+}
+
+.project-container {
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: none;
+  &:nth-child(1).show-animate {
+    display: block;
+    animation: moov 1s backwards ease-in-out;
+  }
+  &:nth-child(2).show-animate {
+    display: block;
+    animation: moov 1s backwards ease-in-out 0.1s;
+  }
+  &:nth-child(3).show-animate {
+    display: block;
+    animation: moov 1s backwards ease-in-out 0.2s;
+  }
+  &:nth-child(4).show-animate {
+    display: block;
+    animation: moov 1s backwards ease-in-out 0.3s;
+  }
+  &:nth-child(5).show-animate {
+    display: block;
+    animation: moov 1s backwards ease-in-out 0.4s;
+  }
+  &:nth-child(6).show-animate {
+    display: block;
+    animation: moov 1s backwards ease-in-out 0.5s;
+  }
+  .project-item {
+    border-radius: 3px;
+    width: 100%;
+    height: 30rem;
+    @include respond(tab-port) {
+      height: 35rem;
+    }
+    @media only screen and (max-width: 27em) {
+      height: 30rem;
+    }
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba($color-black, 0.2);
+    outline: 2px solid $color-white;
+    position: relative;
+    z-index: 10;
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.15); /* Apply scaling on hover */
+      transition: all 0.3s;
+    }
+
+    &__name {
+      position: absolute;
+      top: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: $medium-font-size;
+      letter-spacing: $default-letter-spacing;
+      transition: all 0.3s;
+      opacity: 0;
+      line-height: 1.8rem;
+    }
+
+    &__description {
+      position: absolute;
+      bottom: -2rem;
+      left: 0;
+      padding: 1rem 2rem;
+      hyphens: auto;
+      font-size: $default-font-size;
+      letter-spacing: $small-letter-spacing;
+      transition: all 0.3s;
+      opacity: 0;
+      height: 16rem;
+    }
+
+    &__links {
+      opacity: 0;
+      width: 5rem;
+      height: 8rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      transform: all 0.3s;
+      .project-item__link {
+        width: 2.5rem;
+        height: 2.5rem;
+        opacity: 0.5;
+        transition: opacity 0.2s;
+        &:hover {
+          opacity: 1;
+        }
+        &--website {
+          background-image: url(../../img/link.svg);
+          background-position: top;
+          background-size: cover;
+        }
+        &--github {
+          background-image: url(../../img/github.svg);
+          background-position: top;
+          background-size: cover;
+        }
+      }
+    }
+    &:hover {
+      .project-item__img {
+        filter: brightness(70%) blur(3px);
+        transform: scale(1.05);
+      }
+      .project-item__name {
+        top: 25%;
+        opacity: 1;
+      }
+      .project-item__description {
+        bottom: 10%;
+        @include respond(tab-port) {
+          bottom: 15%;
+        }
+        opacity: 1;
+        overflow-y: scroll;
+        margin: 0 0.5rem;
+        &::-webkit-scrollbar {
+          width: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background: #d3d3d3b8;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: #d1d1d1;
+        }
+      }
+      .project-item__links {
+        opacity: 1;
+      }
+    }
+  }
+  .project-btn {
+    padding: 1rem 3rem;
+    font-size: $default-font-size;
+    letter-spacing: $small-letter-spacing;
+    border-radius: 5px;
+    width: 100%;
+    border: 2px solid rgba($color-primary-x-light, 2);
+    background-color: transparent;
+    cursor: pointer;
+    &:disabled {
+      cursor: not-allowed;
+    }
+    &:hover {
+      background-color: rgba($color-primary, 0.2);
+      border: 2px solid transparent;
+    }
+    &:active {
+      border: 2px solid transparent;
+      background-color: rgba($color-primary, 0.3);
+    }
+  }
+}

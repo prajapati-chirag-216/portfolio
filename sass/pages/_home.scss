@@ -1,0 +1,134 @@
+.container {
+  width: 100%;
+  background-color: $color-bg-primary;
+}
+.section {
+  min-height: 100vh;
+}
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap-large;
+  width: 100%;
+  @include respond(tab-land) {
+    gap: $gap-medium;
+  }
+
+  @include respond(tab-port) {
+    gap: $gap-large;
+    flex-direction: column;
+  }
+  justify-content: space-between;
+  opacity: 0;
+  &.show-animate {
+    animation: pop-out-about 1s $default-easing-function forwards;
+  }
+  & > div {
+    flex: 1;
+  }
+  position: relative;
+  overflow: hidden;
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url(../../img/quote-white.png);
+    background-size: cover;
+    top: -5rem;
+    left: -4rem;
+    width: 21rem;
+    height: 21rem;
+    opacity: 0.2;
+  }
+}
+
+.profile-section {
+  position: absolute;
+  top: 20%;
+  height: 54rem; // nessesary other wise text will go to top on reload( for miliseconds)
+  box-sizing: content-box;
+  right: 5rem;
+  display: flex;
+  flex-direction: row-reverse;
+  @include respond(tab-port) {
+    top: 35%;
+    right: 3rem;
+  }
+  padding-left: 3rem;
+}
+
+.skill-section {
+  width: 100%;
+  padding: 5rem 4rem;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  background-color: $color-bg-secondary;
+  z-index: 10;
+  &::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 25rem;
+    height: 25rem;
+    top: 5rem;
+    right: 3rem;
+    opacity: 0.15;
+    background-image: url(../../img/skill.png);
+    background-size: cover;
+    background-position: top right;
+  }
+}
+.education-section {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url(../../img/education.svg);
+    background-size: cover;
+    width: 18rem;
+    height: 18rem;
+    transform: rotate(20deg);
+    top: 4rem;
+    right: 3rem;
+    opacity: 0.1;
+  }
+}
+.project-section {
+  padding: 2rem;
+  padding: 5rem 4rem;
+
+  background-color: $color-bg-secondary;
+}
+.contact-section {
+  display: flex;
+  @media only screen and (max-width: 50em) {
+    flex-direction: column;
+  }
+  gap: 5rem;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url(../../img/contact-info.svg);
+    background-size: cover;
+    bottom: 2rem;
+    right: 2rem;
+    width: 7rem;
+    height: 7rem;
+    opacity: 0.2;
+    z-index: -1;
+  }
+}
+
+.footer {
+  background-color: $color-bg-secondary;
+  height: 40rem;
+  margin-top: 15rem;
+  position: relative;
+}
