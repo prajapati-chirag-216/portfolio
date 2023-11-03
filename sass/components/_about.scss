@@ -73,5 +73,6 @@
     @include respond(phone) {
       width: 100%;
     }
+    hyphens: auto;
   }
 }
