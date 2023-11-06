@@ -1,3 +1,35 @@
+.about_section-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap-large;
+  width: 100%;
+  margin-top: 10rem;
+  @include respond(tab-land) {
+    gap: $gap-medium;
+  }
+
+  @include respond(tab-port) {
+    gap: $gap-large;
+    flex-direction: column;
+  }
+  justify-content: space-between;
+  & > div {
+    flex: 1;
+  }
+  position: relative;
+  overflow: hidden;
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url(../../img/quote-white.png);
+    background-size: cover;
+    top: -5rem;
+    left: -4rem;
+    width: 21rem;
+    height: 21rem;
+    opacity: 0.2;
+  }
+}
 .about-content {
   &--secondary {
     font-size: $default-font-size;
@@ -20,12 +52,12 @@
   align-content: flex-start;
   font-size: $default-font-size;
   min-width: 55rem;
-  @include respond(phone) {
-    min-width: 100%;
-  }
   @media only screen and (max-width: 62.5em) {
-    flex-direction: column;
     min-width: 42rem;
+  }
+  @include respond(phone) {
+    flex-direction: column;
+    min-width: 100%;
   }
 }
 .detail {
@@ -38,11 +70,12 @@
   letter-spacing: $small-letter-spacing;
   display: flex;
   align-items: center;
-  @media only screen and (max-width: 62.5em) {
+  @media only screen and (max-width: 62.5em) and (min-width: 56.25em) {
     width: 100%;
   }
+
   @include respond(phone) {
-    width: 100%;
+    width: fit-content;
   }
   & > span {
     margin-left: 2.2rem;
@@ -60,7 +93,6 @@
 }
 .hobies {
   margin-top: 2.5rem;
-  hyphens: auto;
   & > h2 {
     line-height: $small-line-hight;
     letter-spacing: $small-letter-spacing;

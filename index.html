@@ -47,7 +47,7 @@
 
       <!-- Content -->
       <div class="header-content">
-        <div class="text-container u-margin-bottom-small">
+        <div class="text-container">
           <h1 class="primary-text text">Hi, I'm Chirag</h1>
           <hr class="hr u-margin-bottom-small u-margin-top-small">
           </hr>
@@ -69,7 +69,8 @@
 
     <!--////////////////////////////////////////// 
       ///////ABOUT SECTION -->
-    <section class="section about-section section-card u-margin-top-large" id="about-section">
+    <section class="section about-section" id="about-section">
+      <div class="section-card u-margin-top-large about_section-content">
       <div class="about-content">
         <h1 class="section-title u-margin-bottom-small">About Me</h1>
         <hr class="heading-line--small u-margin-bottom-medium" />
@@ -129,11 +130,12 @@
           </p>
         </div>
       </div>
+    </div>
     </section>
 
     <!--////////////////////////////////////////// 
       ///////SKILL SECTION -->
-    <section class="section skill-section u-margin-top-x-large" id="skill-section">
+    <section class="section skill-section" id="skill-section">
       <h1 class="section-title u-margin-bottom-small">Skills I Have</h1>
       <hr class="heading-line--small">
       <main class="skill-content u-margin-top-large">
@@ -172,7 +174,8 @@
 
     <!--////////////////////////////////////////// 
       ///////EDUCATION SECTION -->
-    <section class="section education-section section-card u-margin-top-x-large" >
+    <section class="section education-section" >
+      <div class="section-card u-margin-top-large education_section-content">
       <h1 class="section-title u-margin-bottom-small">Education</h1>
       <hr class="heading-line--small u-margin-bottom-medium">
       <div class="education-container">
@@ -221,11 +224,12 @@
           </div>
         </div>
       </div>
+    </div>
     </section>
 
     <!--////////////////////////////////////////// 
       ///////PROJECT SECTION -->
-    <section class="section project-section u-margin-top-x-large" id="project-section">
+    <section class="section project-section" id="project-section">
       <h1 class="section-title u-margin-bottom-small" >Portfolio</h1>
       <hr class="heading-line--small u-margin-bottom-medium" />
       <main class="project-grid">
@@ -356,7 +360,8 @@
 
     <!--////////////////////////////////////////// 
       ///////CONTACT SECTION -->
-      <section class="section contact-section section-card u-margin-top-x-large" id="contact-section">
+      <section class="section contact-section" id="contact-section">
+        <div class="section-card u-margin-top-large contact_section-content">
         <div class="contact-details">
           <h1 class="section-title u-margin-bottom-small">Contact</h1>
           <hr class="heading-line--small u-margin-bottom-medium" />
@@ -384,7 +389,7 @@
         </div>
         <hr>
         <div class="contact-form u-margin-top-small">
-          <form action="#" class="form">
+          <form action="#" class="form" onsubmit="submitFormHandler(event)" method="post">
             <div class="form__group--combine">
               <div class="form__group">
                 <input
@@ -424,7 +429,6 @@
               <label for="subject" class="form__label">Subject</label>
             </div>
             <div class="form__group">
-              
               <textarea
                 name="message"
                 id="message"
@@ -436,11 +440,11 @@
               ></textarea>
               <label for="message" class="form__label">Message</label>
             </div>
-            
             <div class="form__group">
-              <button class="btn btn--green">Send Message</button>
+              <button class="btn btn--green" type="submit">Send Message</button>
             </div>
           </form>
+        </div>
         </div>
       </section>
 
@@ -470,11 +474,22 @@
             </section>
             <a class="download-btn download-btn--footer" href="./file/Chirag_Prajapati.pdf" download><img src="./img/download.svg" alt="icon" class="download-icon">Download Resume</a>
         </footer>
+
+      <!--////////////////////////////////////////// 
+      ///////TOSTER -->
+      <div class="toster">
+        <div class="toster-blink"></div>
+        <div class="toster-content">
+          <img class="toster-icon" src="./img/check.svg">
+          <p class="toster-message">Sent Succesfully</p>
+        </div>
+      </div>
   </div>
   <script src="./sass/js/header.js"></script>
   <script src="./sass/js/skill.js"></script>
   <script src="./sass/js/footer.js"></script>
   <script src="./sass/js/scroll.js"></script>
+  <script src="./sass/js/form.js"></script>
 </body>
 
 </html>

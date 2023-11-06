@@ -1,0 +1,36 @@
+.toster {
+  position: fixed;
+  top: -10rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1000;
+  &-blink {
+    position: absolute;
+    border-radius: 10rem;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  &-content {
+    padding: 0.5rem;
+    background-color: $color-primary-x-light;
+    border-radius: 10rem;
+    box-shadow: 0 3px 8px rgba(#363636, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 30rem;
+    transform-origin: center left;
+    overflow: hidden;
+  }
+  &-message {
+    font-size: 2.5rem;
+    letter-spacing: $small-letter-spacing;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  &-icon {
+    width: 4.5rem;
+  }
+}

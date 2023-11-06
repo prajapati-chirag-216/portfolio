@@ -25,6 +25,9 @@
   justify-content: center;
   width: fit-content;
   height: fit-content;
+  @media only screen and (max-width: 31.25em) {
+    margin-bottom: 10rem;
+  }
 }
 
 .primary-text {

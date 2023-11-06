@@ -2,6 +2,7 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
   color: $color-white;
+  scroll-behavior: smooth;
   @include respond(big-dekstop) {
     font-size: 75%; // 1rem=12px 12/16 = 75%
   }
@@ -23,6 +24,9 @@ html {
 body {
   margin: 0;
   padding: 0;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 ::selection {

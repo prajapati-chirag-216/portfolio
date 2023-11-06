@@ -1,3 +1,21 @@
+.education_section-content {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url(../../img/education.svg);
+    background-size: cover;
+    width: 18rem;
+    height: 18rem;
+    transform: rotate(20deg);
+    top: 4rem;
+    right: 3rem;
+    opacity: 0.1;
+  }
+}
 .education-container {
   display: flex;
   justify-content: space-between;

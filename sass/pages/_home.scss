@@ -6,44 +6,17 @@
   min-height: 100vh;
 }
 .about-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $gap-large;
-  width: 100%;
-  @include respond(tab-land) {
-    gap: $gap-medium;
-  }
-
-  @include respond(tab-port) {
-    gap: $gap-large;
-    flex-direction: column;
-  }
-  justify-content: space-between;
   opacity: 0;
   &.show-animate {
     animation: pop-out-about 1s $default-easing-function forwards;
   }
-  & > div {
-    flex: 1;
-  }
-  position: relative;
-  overflow: hidden;
-  &::after {
-    position: absolute;
-    content: "";
-    background-image: url(../../img/quote-white.png);
-    background-size: cover;
-    top: -5rem;
-    left: -4rem;
-    width: 21rem;
-    height: 21rem;
-    opacity: 0.2;
-  }
+  padding: 1rem;
+  padding-bottom: 10rem;
 }
 
 .profile-section {
   position: absolute;
-  top: 20%;
+  bottom: 8rem;
   height: 54rem; // nessesary other wise text will go to top on reload( for miliseconds)
   box-sizing: content-box;
   right: 5rem;
@@ -52,6 +25,9 @@
   @include respond(tab-port) {
     top: 35%;
     right: 3rem;
+  }
+  @include respond(phone) {
+    top: 33%;
   }
   padding-left: 3rem;
 }
@@ -63,6 +39,7 @@
   overflow: hidden;
   user-select: none;
   background-color: $color-bg-secondary;
+  padding-bottom: 10rem;
   z-index: 10;
   &::after {
     position: absolute;
@@ -77,58 +54,38 @@
     background-size: cover;
     background-position: top right;
   }
+  @media only screen and (max-width: 31.25em) {
+    padding: 5rem 4rem 0rem 4rem;
+  }
+  @media only screen and (max-width: 26em) {
+    width: 100%;
+    overflow-x: scroll;
+  }
 }
 .education-section {
-  position: relative;
-  z-index: 10;
-  overflow: hidden;
-
-  &::after {
-    position: absolute;
-    content: "";
-    background-image: url(../../img/education.svg);
-    background-size: cover;
-    width: 18rem;
-    height: 18rem;
-    transform: rotate(20deg);
-    top: 4rem;
-    right: 3rem;
-    opacity: 0.1;
-  }
+  padding: 1rem;
 }
 .project-section {
   padding: 2rem;
   padding: 5rem 4rem;
-
+  padding-bottom: 7rem;
   background-color: $color-bg-secondary;
 }
 .contact-section {
-  display: flex;
-  @media only screen and (max-width: 50em) {
-    flex-direction: column;
+  opacity: 0;
+  &.show-animate {
+    animation: pop-out-about 1s $default-easing-function forwards;
   }
-  gap: 5rem;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  z-index: 10;
-  &::after {
-    position: absolute;
-    content: "";
-    background-image: url(../../img/contact-info.svg);
-    background-size: cover;
-    bottom: 2rem;
-    right: 2rem;
-    width: 7rem;
-    height: 7rem;
-    opacity: 0.2;
-    z-index: -1;
-  }
+  padding: 1rem;
+  padding-bottom: 10rem;
 }
 
 .footer {
   background-color: $color-bg-secondary;
   height: 40rem;
-  margin-top: 15rem;
+  margin-top: 10rem;
   position: relative;
+  @media only screen and (min-width: 50em) and (max-width: 56.25em) {
+    margin-top: 0rem;
+  }
 }

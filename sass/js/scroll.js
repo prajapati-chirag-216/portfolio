@@ -47,3 +47,19 @@ window.onscroll = () => {
     }
   });
 };
+
+// console.log(document.getElementsByClassName("menu-icon-btn")[0]);
+// const icons = document.querySelectorAll(".menu-icon");
+// icons.forEach((icon, ind) => {
+//   icon.addEventListener("click", () => {
+//     if (ind == 0) {
+//     }
+//     if (ind == 1) {
+//       console.log("ran");
+//       document.getElementsByClassName("container")[0].scrollTo += 300;
+//     }
+//     if (ind == 2) {
+//     } else {
+//     }
+//   });
+// });

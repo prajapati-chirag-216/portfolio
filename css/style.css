@@ -18,7 +18,8 @@ $breakpoint argument choices :
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  color: #fff; }
+  color: #fff;
+  scroll-behavior: smooth; }
   @media only screen and (max-width: 75em) {
     html {
       font-size: 56.25%; } }
@@ -36,6 +37,8 @@ html {
 body {
   margin: 0;
   padding: 0; }
+  body::-webkit-scrollbar {
+    display: none; }
 
 ::selection {
   background-color: #4fab8e;
@@ -92,11 +95,11 @@ body {
   0% {
     opacity: 1;
     scale: 0.9;
-    background-color: #7ed56f78; }
+    background-color: #68a18f; }
   100% {
     opacity: 0;
     scale: 1.6;
-    background-color: #28b485de; } }
+    background-color: #76b29f; } }
 
 @keyframes pop-out-primary {
   0% {
@@ -242,6 +245,46 @@ body {
     transform: translateY(-5px); }
   100% {
     transform: translateY(0); } }
+
+@keyframes move-down-notification {
+  0% {
+    top: -4rem;
+    opacity: 0; }
+  100% {
+    top: 4rem;
+    opacity: 1; } }
+
+@keyframes fade-out-notification {
+  0% {
+    top: 4rem;
+    opacity: 1; }
+  100% {
+    top: 4rem;
+    opacity: 0; } }
+
+@keyframes animate-notification {
+  0% {
+    transform: scale(1.5); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes animate-notification-reverse {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1.5); } }
+
+@keyframes expand-toster {
+  0% {
+    width: 5.45rem; }
+  100% {
+    width: 30rem; } }
+
+@keyframes shrink-toster {
+  0% {
+    width: 30rem; }
+  100% {
+    width: 5.45rem; } }
 
 .skill-content-grid {
   width: 100%;
@@ -545,6 +588,35 @@ body {
       letter-spacing: 0.5px;
       font-size: 1.8rem; } }
 
+.about_section-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  width: 100%;
+  margin-top: 10rem;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden; }
+  @media only screen and (max-width: 75em) {
+    .about_section-content {
+      gap: 3rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .about_section-content {
+      gap: 4rem;
+      flex-direction: column; } }
+  .about_section-content > div {
+    flex: 1; }
+  .about_section-content::after {
+    position: absolute;
+    content: "";
+    background-image: url(../../img/quote-white.png);
+    background-size: cover;
+    top: -5rem;
+    left: -4rem;
+    width: 21rem;
+    height: 21rem;
+    opacity: 0.2; }
+
 .about-content {
   width: 100%; }
   .about-content--secondary {
@@ -563,13 +635,13 @@ body {
   align-content: flex-start;
   font-size: 1.6rem;
   min-width: 55rem; }
-  @media only screen and (max-width: 37.5em) {
-    .personal-details {
-      min-width: 100%; } }
   @media only screen and (max-width: 62.5em) {
     .personal-details {
-      flex-direction: column;
       min-width: 42rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .personal-details {
+      flex-direction: column;
+      min-width: 100%; } }
 
 .detail {
   width: 43%;
@@ -582,12 +654,12 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 2rem; }
-  @media only screen and (max-width: 62.5em) {
+  @media only screen and (max-width: 62.5em) and (min-width: 56.25em) {
     .detail {
       width: 100%; } }
   @media only screen and (max-width: 37.5em) {
     .detail {
-      width: 100%; } }
+      width: fit-content; } }
   .detail > span {
     margin-left: 2.2rem;
     font-weight: 500;
@@ -599,15 +671,15 @@ body {
       word-break: break-all; }
 
 .hobies {
-  margin-top: 2.5rem;
-  hyphens: auto; }
+  margin-top: 2.5rem; }
   .hobies > h2 {
     line-height: 1rem;
     letter-spacing: 1px; }
   .hobies > p::first-letter {
     font-size: 2.2rem; }
   .hobies > p {
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    hyphens: auto; }
     @media only screen and (max-width: 37.5em) {
       .hobies > p {
         width: 100%; } }
@@ -637,6 +709,9 @@ body {
   justify-content: center;
   width: fit-content;
   height: fit-content; }
+  @media only screen and (max-width: 31.25em) {
+    .text-container {
+      margin-bottom: 10rem; } }
 
 .primary-text {
   font-size: 5rem;
@@ -796,6 +871,22 @@ body {
 
 .menu-item:nth-child(4):hover .menu-icon {
   content: url("../img/contact.svg"); }
+
+.education_section-content {
+  position: relative;
+  z-index: 10;
+  overflow: hidden; }
+  .education_section-content::after {
+    position: absolute;
+    content: "";
+    background-image: url(../../img/education.svg);
+    background-size: cover;
+    width: 18rem;
+    height: 18rem;
+    transform: rotate(20deg);
+    top: 4rem;
+    right: 3rem;
+    opacity: 0.1; }
 
 .education-container {
   display: flex;
@@ -1026,6 +1117,28 @@ body {
   .project-container--link, .project-container--link:visited, .project-container--link:link {
     color: #000; }
 
+.contact_section-content {
+  display: flex;
+  gap: 5rem;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  z-index: 10; }
+  @media only screen and (max-width: 50em) {
+    .contact_section-content {
+      flex-direction: column; } }
+  .contact_section-content::after {
+    position: absolute;
+    content: "";
+    background-image: url(../../img/contact-info.svg);
+    background-size: cover;
+    bottom: 2rem;
+    right: 2rem;
+    width: 7rem;
+    height: 7rem;
+    opacity: 0.2;
+    z-index: -1; }
+
 .contact-details {
   flex: 1; }
   .contact-details + hr {
@@ -1192,6 +1305,38 @@ body {
     .download-btn--footer:visited:hover > img {
       animation: shake-top-down 0.5s ease-in-out infinite; } }
 
+.toster {
+  position: fixed;
+  top: -10rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1000; }
+  .toster-blink {
+    position: absolute;
+    border-radius: 10rem;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+  .toster-content {
+    padding: 0.5rem;
+    background-color: #76b29f;
+    border-radius: 10rem;
+    box-shadow: 0 3px 8px rgba(54, 54, 54, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 30rem;
+    transform-origin: center left;
+    overflow: hidden; }
+  .toster-message {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    white-space: nowrap; }
+  .toster-icon {
+    width: 4.5rem; }
+
 .container {
   width: 100%;
   background-color: #e3ded9; }
@@ -1200,39 +1345,15 @@ body {
   min-height: 100vh; }
 
 .about-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  width: 100%;
-  justify-content: space-between;
   opacity: 0;
-  position: relative;
-  overflow: hidden; }
-  @media only screen and (max-width: 75em) {
-    .about-section {
-      gap: 3rem; } }
-  @media only screen and (max-width: 56.25em) {
-    .about-section {
-      gap: 4rem;
-      flex-direction: column; } }
+  padding: 1rem;
+  padding-bottom: 10rem; }
   .about-section.show-animate {
     animation: pop-out-about 1s cubic-bezier(0.58, -0.01, 0.35, 1.33) forwards; }
-  .about-section > div {
-    flex: 1; }
-  .about-section::after {
-    position: absolute;
-    content: "";
-    background-image: url(../../img/quote-white.png);
-    background-size: cover;
-    top: -5rem;
-    left: -4rem;
-    width: 21rem;
-    height: 21rem;
-    opacity: 0.2; }
 
 .profile-section {
   position: absolute;
-  top: 20%;
+  bottom: 8rem;
   height: 54rem;
   box-sizing: content-box;
   right: 5rem;
@@ -1243,6 +1364,9 @@ body {
     .profile-section {
       top: 35%;
       right: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .profile-section {
+      top: 33%; } }
 
 .skill-section {
   width: 100%;
@@ -1251,6 +1375,7 @@ body {
   overflow: hidden;
   user-select: none;
   background-color: rgba(118, 178, 159, 0.3);
+  padding-bottom: 10rem;
   z-index: 10; }
   .skill-section::after {
     position: absolute;
@@ -1264,55 +1389,38 @@ body {
     background-image: url(../../img/skill.png);
     background-size: cover;
     background-position: top right; }
+  @media only screen and (max-width: 31.25em) {
+    .skill-section {
+      padding: 5rem 4rem 0rem 4rem; } }
+  @media only screen and (max-width: 26em) {
+    .skill-section {
+      width: 100%;
+      overflow-x: scroll; } }
 
 .education-section {
-  position: relative;
-  z-index: 10;
-  overflow: hidden; }
-  .education-section::after {
-    position: absolute;
-    content: "";
-    background-image: url(../../img/education.svg);
-    background-size: cover;
-    width: 18rem;
-    height: 18rem;
-    transform: rotate(20deg);
-    top: 4rem;
-    right: 3rem;
-    opacity: 0.1; }
+  padding: 1rem; }
 
 .project-section {
   padding: 2rem;
   padding: 5rem 4rem;
+  padding-bottom: 7rem;
   background-color: rgba(118, 178, 159, 0.3); }
 
 .contact-section {
-  display: flex;
-  gap: 5rem;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  z-index: 10; }
-  @media only screen and (max-width: 50em) {
-    .contact-section {
-      flex-direction: column; } }
-  .contact-section::after {
-    position: absolute;
-    content: "";
-    background-image: url(../../img/contact-info.svg);
-    background-size: cover;
-    bottom: 2rem;
-    right: 2rem;
-    width: 7rem;
-    height: 7rem;
-    opacity: 0.2;
-    z-index: -1; }
+  opacity: 0;
+  padding: 1rem;
+  padding-bottom: 10rem; }
+  .contact-section.show-animate {
+    animation: pop-out-about 1s cubic-bezier(0.58, -0.01, 0.35, 1.33) forwards; }
 
 .footer {
   background-color: rgba(118, 178, 159, 0.3);
   height: 40rem;
-  margin-top: 15rem;
+  margin-top: 10rem;
   position: relative; }
+  @media only screen and (min-width: 50em) and (max-width: 56.25em) {
+    .footer {
+      margin-top: 0rem; } }
 
 .main-header {
   width: 100%;
@@ -1320,12 +1428,14 @@ body {
   overflow: hidden;
   position: relative;
   background-color: #e3ded9; }
+  @media only screen and (max-width: 37.5em) {
+    .main-header {
+      height: 90vh; } }
 
 .section-card {
   background-image: linear-gradient(to bottom right, #76b29f, #1c6f55);
   min-height: 50rem;
-  margin: 3rem;
-  margin-top: 10rem;
+  margin: auto;
   padding: 5rem 4rem;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
