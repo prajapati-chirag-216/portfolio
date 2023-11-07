@@ -1097,6 +1097,24 @@ body {
         background: #d1d1d1; }
     .project-container .project-item:hover .project-item__links {
       opacity: 1; }
+  .project-container .project-tech {
+    font-size: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    justify-content: center;
+    gap: 1rem; }
+    .project-container .project-tech > p {
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      background-color: #76b29f;
+      border-radius: 3px;
+      width: fit-content;
+      text-align: center;
+      padding: 0.5rem 1.1rem;
+      margin-bottom: 0.7rem;
+      text-transform: capitalize; }
   .project-container .project-btn {
     padding: 1rem 3rem;
     font-size: 1.6rem;
