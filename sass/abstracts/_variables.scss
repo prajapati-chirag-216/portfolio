@@ -1,24 +1,24 @@
 // COLORS
-$color-primary: #4fab8e;
-$color-primary-light: #68a18f;
-$color-primary-x-light: #76b29f;
-$color-primary-dark: #1c6f55;
-$color-primary-x-dark: #1b5845;
+$color-primary: #007c77; // Teal
+$color-primary-light: #33a69b; // Soft Teal
+$color-primary-x-light: #66c2b2; // Light Teal
+$color-primary-dark: #004d46; // Dark Teal
+$color-primary-x-dark: #003d38; // Deep Teal
 
-$color-bg-primary: rgb(227, 222, 217);
-$color-bg-secondary: rgba($color-primary-x-light, 0.3);
+$color-bg-primary: rgb(240, 245, 250); // Light Grayish Blue
+$color-bg-secondary: rgba($color-primary-x-light, 0.2); // Light Teal Overlay
 
-$color-grey-light-1: #f7f7f7;
-$color-grey-light-2: #feee;
+$color-grey-light-1: #f0f4f8; // Soft Gray
+$color-grey-light-2: #e4e8eb; // Very Light Gray
 
-$color-grey-dark-1: #777;
-$color-grey-dark-2: #999;
-$color-grey-dark-3: #333;
+$color-grey-dark-1: #4a5568; // Slate Gray
+$color-grey-dark-2: #2d3748; // Charcoal Gray
+$color-grey-dark-3: #1a202c; // Dark Slate
 
-$color-white: #fff;
-$color-black: #000;
+$color-white: #ffffff; // Pure White
+$color-black: #10171e; // Dark Charcoal
 
-//GRADIENT
+// GRADIENT
 $gradient-primary: linear-gradient(
   to bottom right,
   $color-primary-light,
@@ -38,7 +38,7 @@ $gradient-tertiary: linear-gradient(
 $gradient-shine: linear-gradient(
   0deg,
   transparent 0%,
-  #ffffff97 50%,
+  rgba(255, 255, 255, 0.6) 50%,
   transparent
 );
 
@@ -84,15 +84,24 @@ $nav-transition-delay: 0.9s;
 
 //MENU
 $menu-font-size: 2.2rem;
+// ABOUT
+$color-about-primary: rgba(
+  102,
+  194,
+  178,
+  0.6
+); // Soft Teal with a lighter opacity for about section
 
-//ABOUT
-$color-about-primary: rgba(196, 200, 204, 0.729);
-
-//HR
+// HR
 $hr-primary: 1px solid currentcolor;
 $hr-medium: 2px solid currentcolor;
-$color-hr-primary: $color-primary-light;
-$color-hr-secondary: rgba(154, 171, 187, 0.236);
+$color-hr-primary: $color-primary-light; // Light Teal for primary horizontal rule
+$color-hr-secondary: rgba(
+  105,
+  118,
+  128,
+  0.2
+); // Soft muted grayish teal for secondary horizontal rule
 
 //LINE-HIGHT
 $default-line-hight: 2rem;
